@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8"/>
+<title>Post Message</title>
+</head>
+<body>
+	<form th:action="@{/user/newmessage}" th:object = "${bhpost}" method="post">
+		<label for=message>Message<mark>*</mark><strong><span th:if="${#fields.hasErrors('message')}" th:errors="*{message}">Message Error</span></strong></label>
+        <input type="textarea" maxlength=140 class="form-control" name="message" placeholder="Enter your message here" th:field="*{message}"/>
+        <input type="Submit" value="Post!">
+	</form>
+</body>
+</html>
