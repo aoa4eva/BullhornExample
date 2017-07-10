@@ -6,9 +6,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -28,6 +31,10 @@ public class BullhornPost {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date xtime;
+	
+	 @ManyToOne(fetch = FetchType.EAGER)
+	 @JoinColumn(name = "userid")
+	 private User bhUser;
 
 	/**
 	 * @return the message
@@ -62,5 +69,33 @@ public class BullhornPost {
 	 */
 	public long getId() {
 		return id;
-	} 
+	}
+
+	/**
+	 * @return the bhUser
+	 */
+	public User getBhUser() {
+		return bhUser;
+	}
+
+	/**
+	 * @param bhUser the bhUser to set
+	 */
+	public void setBhUser(User bhUser) {
+		this.bhUser = bhUser;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "BullhornPost [id=" + id + ", message=" + message + ", xtime=" + xtime + ", bhUser=" + bhUser
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+	}
+
+	/**
+	 * @return the user
+	 */
+	
 }

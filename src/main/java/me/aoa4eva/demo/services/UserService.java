@@ -33,8 +33,17 @@ public class UserService {
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+ 
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
     public Long countByEmail(String email) {
         return userRepository.countByEmail(email);
+    }
+    
+    public Iterable <User> findAll()
+    {
+    	return userRepository.findAll();
     }
 
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+
+<table>
+	<thead>
+	<tr><th>Username</th></tr>
+	</thead>
+	
+	<tbody>
+	<tr th:each="item : ${allUsers}">
+	<form th:action="@{{$username}}">
+		<td th:text="${item.username}"></td>
+		<td><input type="submit" value="Select user"></td>
+	</tr>
+	</tbody>
+</table>
+<ul>
+  <p th:each="item : ${allUsers}" th:text="${item.username}">Item description here...</p>
+</ul>
+</body>
+</html>
