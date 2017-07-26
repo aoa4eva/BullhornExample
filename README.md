@@ -10,6 +10,6 @@ To use this project:
 This project includes the following features: 
 - Automatically generated timestamps (WIP) 
 - One to many relationships (WIP, User to Posts) 
-- Many to many relationships (WIP, Users followoing each other) 
+- Many to many relationships (WIP, Users following each other) 
 - Text area limit (includes counter so you know how many characters have been typed) 
 - Picture uploads (WIP, for user profiles only) 
